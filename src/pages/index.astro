@@ -6,6 +6,8 @@ import GitHub from '../icons/GitHub.astro';
 import LinkedIn from '../icons/LinkedIn.astro';
 import Mail from '../icons/Mail.astro';
 import Experience from '../components/Experience.astro';
+import SectionContainer from '../components/SectionContainer.astro';
+import Briefcase from '../icons/Briefcase.astro';
 
 ---
 
@@ -14,7 +16,7 @@ import Experience from '../components/Experience.astro';
 	description="Developer frontend and Backend specialized in web development"
 >
 	<main>
-		<section class="flex justify-center">
+		<section class=`flex justify-center py-210`>
 			<img class="h-svh " src="../public/images/DavidGuzman.png" alt="" />
 			<div class="flex-col">
 				<div class="flex flex-col items-start gap-2.5 mt-20">
@@ -36,9 +38,13 @@ import Experience from '../components/Experience.astro';
 				</div>
 			</div>
 		</section>
-
-		<section>
+			
+		<SectionContainer id="experience">
+				<h1 class="text-2xl font-bold mb-6 flex gap-x-3 items-center">
+					<Briefcase />
+					Experience
+				</h1>
 			<Experience />
-		</section>
+		</SectionContainer>
 	</main>
 </Layout>

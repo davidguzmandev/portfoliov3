@@ -1,36 +1,45 @@
 ---
-import LinkedIn from "../icons/LinkedIn.astro"
 import ExperienceItem from "./ExperienceItem.astro"
 
 const experience = [
     {
-        date: 'February 2022',
-        title: 'Application UI code in Tailwind CSS',
-        description: 'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.',
-        link: '#'
+        date: `January 2024 - Currently • 8 months`,
+        title: 'Software Engineer',
+        company: 'Mattr - Montreal QC • Hybrid',
+        description: 'Web application development in React.Js and Tailwind as frontend and NodeJs and SQL as backend. Achieving 100% paper elimination as a monitoring process in production through the web application.',
     },
     {
-        date: 'February 2023',
-        title: 'Application UI code in Tailwind CSS',
-        description: 'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.',
-        link: '#'
+        date: 'August 2022 - April 2023 • 9 months',
+        title: 'Front-end Developer',
+        company: 'Visual Dealers - Los Angeles CA • Remote',
+        description: 'E-commerce, email marketing templates, SEO and landing pages developer. 70% improvement in Core Web Vitals. Passionate about creating exceptional, performance-driven web experiences.',
     },
     {
-        date: 'February 2024',
-        title: 'Application UI code in Tailwind CSS',
-        description: 'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.',
-        link: '#'
+        date: 'June 2020 - August 2022 • 2 years 3 months ',
+        title: 'Front-end Developer',
+        company: 'Ecopetrol SA - Colombia • On site',
+        description: 'Creation of corporate web applications and small games with VueJs, ReactJs, Bootstrap, HTML, CCS. Daily use of Google Analytics, Google Tag Manager and Google Search Console.',
+    },
+    {
+        date: 'January 2020 - June 2020 • 6 Months',
+        title: 'Front-end Developer',
+        company: 'Imaginamos - Colombia • Hybrid',
+        description: 'Development of business portals as an educational service offering with Wordpress and Joomla. Development of an educational tool for online classes with Moodle and JavaScript as an interactive method.',
+    },
+    {
+        date: 'January 2019 - December 2019 • 1 year',
+        title: 'Web Developer',
+        company: 'Zona en Linea - Colombia • Remote',
+        description: 'Development of web pages in HTML, CSS, Javascript and CMS such as Wordpress, Joomla, Drupal and Prestashop.',
     }
 ]
 ---
 
 
-<ol class="relative border-s border-gray-200 dark:border-gray-700">             
+<ol class="relative border-s border-gray-200 dark:border-gray-700">
     {
         experience.map(experience =>(
-            <li class="mb-10 ms-4">
                 <ExperienceItem {...experience} />
-            </li>
         ))
     }
 </ol>
