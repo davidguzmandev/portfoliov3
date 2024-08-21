@@ -5,10 +5,14 @@ import SocialPill from '../icons/SocialPill.astro';
 import GitHub from '../icons/GitHub.astro';
 import LinkedIn from '../icons/LinkedIn.astro';
 import Mail from '../icons/Mail.astro';
+import Experience from '../components/Experience.astro';
 
 ---
 
-<Layout title="David Guzman | Software Engineer | FullStack Developer ">
+<Layout 
+	title="David Guzman | Software Engineer | FullStack Developer"
+	description="Developer frontend and Backend specialized in web development"
+>
 	<main>
 		<section class="flex justify-center">
 			<img class="h-svh " src="../public/images/DavidGuzman.png" alt="" />
@@ -31,6 +35,10 @@ import Mail from '../icons/Mail.astro';
 					</SocialPill>
 				</div>
 			</div>
+		</section>
+
+		<section>
+			<Experience />
 		</section>
 	</main>
 </Layout>
