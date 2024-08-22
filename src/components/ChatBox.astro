@@ -1,12 +1,18 @@
 ---
 let date = new Date();
-let time = `${date.getHours()}:${date.getMinutes()}`
+let time = () => {
+    const minutes = date.getMinutes();
+        if (minutes <= 9 ) {
+            return `${date.getHours()}:0${date.getMinutes()}`
+        }
+    return `${date.getHours()}:${date.getMinutes()}`
+}
 ---
 
 <div class="flex flex-col w-full max-w-[420px] leading-1.5 p-4 border-gray-200 bg-gray-100 rounded-e-xl rounded-es-xl dark:bg-gray-700">
     <div class="flex items-center space-x-2 rtl:space-x-reverse">
        <h1 class="text-sm md:text-xl font-semibold text-gray-900 dark:text-white">David Guzman</h1>
-       <span class="text-sm font-normal text-gray-500 dark:text-gray-400">{time}</span>
+       <span class="text-sm font-normal text-gray-500 dark:text-gray-400 pt-1">{time}</span>
     </div>
     <p class="text-sm md:text-lg font-normal py-2.5 text-gray-900 dark:text-white">I'm <span class="text-cyan-600">Front-end developer</span class=""> with over 4 years of experience as a web developer.</p>
     <span class="text-sm font-normal text-gray-500 dark:text-gray-400 flex justify-end">
