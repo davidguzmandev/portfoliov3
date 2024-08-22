@@ -8,18 +8,19 @@ import Mail from '../icons/Mail.astro';
 import Experience from '../components/Experience.astro';
 import SectionContainer from '../components/SectionContainer.astro';
 import Briefcase from '../icons/Briefcase.astro';
+import Code from '@/icons/Code.astro';
 
 ---
 
-<Layout 
+<Layout
 	title="David Guzman | Software Engineer | FullStack Developer"
 	description="Developer frontend and Backend specialized in web development"
 >
-	<main>
-		<section class=`flex justify-center py-210`>
-			<img class="h-svh " src="../public/images/DavidGuzman.png" alt="" />
+	<main class="px-4">
+		<section class=`flex flex-col md:flex-row justify-center items-center md:items-start py-210`>
+			<img class="h-svh w-max" src="../public/images/DavidGuzman.png" alt="" />
 			<div class="flex-col">
-				<div class="flex flex-col items-start gap-2.5 mt-20">
+				<div class="flex flex-col items-start gap-2.5 mt-6">
 					<ChatBox />
 				</div>
 				<div class="flex gap-x-2 mt-4 text-sm">
@@ -31,14 +32,14 @@ import Briefcase from '../icons/Briefcase.astro';
 						<LinkedIn class="w-6 h-6"/>
 						LinkedIn
 					</SocialPill>
-					<SocialPill href="https://www.linkedin.com/in/david-gzro/">
+					<SocialPill href="mailto:daguz.91@gmail.com">
 						<Mail class="w-6 h-6"/>
 						daguz.91@gmail.com
 					</SocialPill>
 				</div>
 			</div>
 		</section>
-			
+
 		<SectionContainer id="experience">
 				<h1 class="text-2xl font-bold mb-6 flex gap-x-3 items-center">
 					<Briefcase />
@@ -46,5 +47,13 @@ import Briefcase from '../icons/Briefcase.astro';
 				</h1>
 			<Experience />
 		</SectionContainer>
+
+		<SectionContainer id="projects">
+			<h1 class="text-2xl font-bold mb-6 flex gap-x-3 items-center">
+				<Code />
+				Projects
+			</h1>
+			<Experience />
+		</SectionContainer>	
 	</main>
 </Layout>
