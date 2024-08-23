@@ -4,32 +4,71 @@ import CSS from "../icons/CSS.astro"
 import ReactJS from "../icons/ReactJS.astro"
 import Tailwind from "../icons/Tailwind.astro"
 import Javascript from "../icons/Javascript.astro"
+import Wordpress from "../icons/Wordpress.astro"
+import Bootstrap from "../icons/Bootstrap.astro"
+import Vite from "../icons/Vite.astro"
+import NodeJS from "../icons/NodeJS.astro"
+import Express from "../icons/Express.astro"
+import Mongo from "../icons/Mongo.astro"
+import LinkButton from "./LinkButton.astro"
+import Link from "../icons/Link.astro"
+import GitHub from "../icons/GitHub.astro"
 
 const TAGS = {
     HTML: {
         name: "HTML",
         icon: HTML,
-        class: "bg-red-950",
+        class: "bg-red-950 text-white",
     },
     CSS: {
         name: "CSS",
         icon: CSS,
-        class: "bg-sky-950",
+        class: "bg-sky-950 text-white",
     },
     ReactJS: {
         name: "ReactJS",
         icon: ReactJS,
-        class: "bg-sky-900",
+        class: "bg-sky-900 text-white",
     },
     Tailwind: {
         name: "Tailwind",
         icon: Tailwind,
-        class: "bg-sky-950",
+        class: "bg-sky-950 text-white",
     },
     Javascript: {
         name: "Javascript",
         icon: Javascript,
-        class: "bg-yellow-900",
+        class: "bg-yellow-900 text-white",
+    },
+    Wordpress: {
+        name: "Wordpress",
+        icon: Wordpress,
+        class: "bg-cyan-950 text-white",
+    },
+    Bootstrap: {
+        name: "Bootstrap",
+        icon: Bootstrap,
+        class: "bg-purple-950 text-white",
+    },
+    Vite: {
+        name: "Vite",
+        icon: Vite,
+        class: "bg-purple-950 text-white",
+    },
+    Node: {
+        name: "NodeJS",
+        icon: NodeJS,
+        class: "bg-green-950 text-white",
+    },
+    Express: {
+        name: "Express",
+        icon: Express,
+        class: "bg-zinc-900 text-white",
+    },
+    Mongo: {
+        name: "MongoDB",
+        icon: Mongo,
+        class: "bg-green-950 text-white",
     }
 }
 
@@ -37,48 +76,100 @@ const PROJECTS = [
     {
         category: 'Website',
         title: 'Portfolio Version 1',
-        description: 'Showcase of my skills across various technologies as ReactJS and TailwindCSS Throughout this endeavor, I implemented CSS animations and customized the configuration file of Tailwind CSS to tailor the project to specific requirements.',
+        description: 'Developing my first portfolio with ReactJS and TailwindCSS. Throughout this project, I implemented CSS animations and customized the Tailwind CSS configuration file to tailor the project to specific requirements.',
         link: 'https://www.daveruncode.com/',
         image: './public/images/webv1.webp',
         tags: [TAGS.HTML, TAGS.CSS, TAGS.ReactJS, TAGS.Tailwind, TAGS.Javascript]
+    },
+    {
+        category: 'Website',
+        title: 'Portfolio Version 2',
+        description: 'Development of my second version of personal portfolio with Wordpress using several plugins as practice for this CMS such as DIVI and Elementor. The website is optimized in order to obtain fast loading results.',
+        link: 'https://www.davidguzman.dev/v2',
+        image: './public/images/webv2.webp',
+        tags: [TAGS.Wordpress]
+    },
+    {
+        category: 'Application',
+        title: 'ToDo App',
+        description: 'This application, developed with JavaScript, React JS, and Bootstrap, leverages advanced React functionalities and local storage for seamless interactions, managed with Yarn and Vite, showcasing development expertise.',
+        link: 'https://todo-list-david-guzman.netlify.app/',
+        image: './public/images/ToDoApp.webp',
+        github: "https://github.com/davidguzmandev/ToDo",
+        tags: [TAGS.Javascript, TAGS.ReactJS, TAGS.Bootstrap, TAGS.Vite]
+    },
+    {
+        category: 'Application',
+        title: 'Fullstack Application / MERN Project',
+        description: 'The application allows for creating users in a database, as well as editing and deleting patient records. *The project is down due to the railway backend.',
+        link: 'https://mern-vmp-frontend.vercel.app/',
+        image: './public/images/mern.webp',
+        github: "https://github.com/davidguzmandev/MERN_VMP_frontend",
+        github2: "https://github.com/davidguzmandev/MERN_VMP_backend",
+        video: "https://www.youtube.com/watch?v=1EwChnSfRF8",
+        tags: [TAGS.Javascript, TAGS.ReactJS, TAGS.Tailwind, TAGS.Node, TAGS.Express, TAGS.Mongo, TAGS.Vite]
     }
 ]
 ---
 <div class="flex flex-col gap-y-16">
     {
-      PROJECTS.map(({ image, title, description, tags, link, category }) => (
+      PROJECTS.map(({ image, title, description, tags, link, github, github2, category, video}) => (
       <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
     <div class="w-full md:w-1/2">
       <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-        <img alt={`Screenshot project of ${image}`} class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
+        <img alt={`Screenshot Project ${title}`} class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
       </div>
     </div>
   
     <div class="w-full md:w-1/2 md:max-w-lg">
-      <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
-        {title}
-      </h3>
-      <div class="flex flex-wrap mt-2">
-        <ul class="flex flex-row mb-2 gap-x-2">
-            {tags.map((tag) => (
-              <li>
-                <span
-                  class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
-                >
-                  <tag.icon class="size-4" />
-                  {tag.name}
-                </span>
-              </li>
-            ))}
-          </ul>
-  
-        <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
-        <footer class="flex items-end justify-start mt-4 gap-x-4">
+    <p class="text-sm">{category}</p>
+    <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+      {title}
+    </h3>
+    <div class="flex flex-wrap mt-2">
+      <ul class="flex flex-row gap-x-2 flex-wrap">
+          {tags.map((tag) => (
+            <li class="pb-1">
+              <span
+                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+              >
+                <tag.icon class="size-4" />
+                {tag.name}
+              </span>
+            </li>
+          ))}
+        </ul>
 
-          </footer>
-      </div>
+      <div class="mt-2 text-gray-700 dark:text-gray-400 text-prety">{description}</div>
+      <footer class="flex items-end justify-start mt-4 gap-x-3">
+          {github && (
+            <LinkButton href={github}>
+              <GitHub class="size-6" />
+              Code
+            </LinkButton>
+          )}
+          {github2 && (
+            <LinkButton href={github2}>
+              <GitHub class="size-6" />
+              Code
+            </LinkButton>
+          )}
+          {link && (
+            <LinkButton href={link}>
+              <Link class="size-4" />
+              Preview
+            </LinkButton>
+          )}
+          {video && (
+            <LinkButton href={video}>
+              <Link class="size-4" />
+              Video
+            </LinkButton>
+          )}
+        </footer>
     </div>
-  </article>
-      ))
-    }
   </div>
+</article>
+    ))
+  }
+</div>

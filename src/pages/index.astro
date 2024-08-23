@@ -10,7 +10,10 @@ import SectionContainer from '../components/SectionContainer.astro';
 import Briefcase from '../icons/Briefcase.astro';
 import Code from '../icons/Code.astro';
 import Projects from '../components/Projects.astro';
-
+import About from "../components/About.astro";
+import ProfileCheck from "../icons/ProfileCheck.astro"
+import TechIcon from '@/icons/TechIcon.astro';
+import Tech from '@/components/Tech.astro';
 ---
 
 <Layout
@@ -18,7 +21,7 @@ import Projects from '../components/Projects.astro';
 	description="Developer frontend and Backend specialized in web development"
 >
 	<main class="px-4 mt-20">
-		<section class=`flex flex-col md:flex-row justify-center items-center md:items-start py-210`>
+		<section class=`flex flex-col md:flex-row justify-center items-center md:items-start py-16 md:pt-3 md:pb-36`>
 			<img class="h-svh w-max" src="../public/images/DavidGuzman.png" alt="" />
 			<div class="flex-col">
 				<div class="flex flex-col items-start gap-2.5 mt-6">
@@ -40,21 +43,45 @@ import Projects from '../components/Projects.astro';
 				</div>
 			</div>
 		</section>
+		<div class="space-y-24">
+			<SectionContainer id="experience">
+					<h2 class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white">
+						<Briefcase />
+						Experience
+					</h2>
+				<Experience />
+			</SectionContainer>
 
-		<SectionContainer id="experience">
-				<h1 class="text-2xl font-bold mb-6 flex gap-x-3 items-center">
-					<Briefcase />
-					Experience
-				</h1>
-			<Experience />
-		</SectionContainer>
+			<SectionContainer id="projects">
+				<h2 class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white">
+					<Code />
+					Projects
+				</h2>
+				<Projects />
+				<p class="font-semibold py-20 text-center">
+					<a href="https://davidguzman.dev/v2/portfoliodavidguzman/" target="_blank" rel="noopener noreferrer">More projects</a>
+				</p>
+			</SectionContainer>
 
-		<SectionContainer id="projects">
-			<h1 class="text-2xl font-bold mb-6 flex gap-x-3 items-center">
-				<Code />
-				Projects
-			</h1>
-			<Projects />
-		</SectionContainer>	
+			<SectionContainer id="about">
+				<h2
+				  class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-black/80 dark:text-white"
+				>
+				  <ProfileCheck class="size-8" />
+				  About Me
+				</h2>
+				<About />
+			  </SectionContainer>
+
+			  <SectionContainer id="tech">
+				<h2
+				  class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-black/80 dark:text-white"
+				>
+				  <TechIcon class="size-8" />
+				  Technologies
+				</h2>
+				<Tech />
+			  </SectionContainer>
+		</div>
 	</main>
 </Layout>

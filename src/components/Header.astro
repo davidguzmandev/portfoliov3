@@ -32,13 +32,13 @@ const navItems = [
     <nav
         class="flex px-3 text-sm font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center"
     >
-      <a href="/">
+      <!-- <a href="/">
         <img class="h-12 w-auto invisible md:visible" src="/public/images/Davidwhite.png" alt="David Guzman">
-      </a>
+      </a> -->
       {
           navItems.map((link) => (
           <a
-              class="relative block px-2 py-2 transition hover:text-cyan-600 dark:hover:text-cyan-600"
+              class="relative block px-2 py-2 transition hover:text-cyan-800 dark:hover:text-cyan-800"
               aria-label={link.label}
               href={link.url}
           >
@@ -47,7 +47,7 @@ const navItems = [
           ))
       }
       <ThemeToggle />
-      <Lang />
+      <!-- <Lang /> -->
     </nav>
 </header>
 
@@ -61,9 +61,9 @@ const navItems = [
           if (entry.isIntersecting) {
             navItems.forEach((item) => {
               if (item.getAttribute("aria-label") == entry.target.id) {
-                item.classList.add("text-yellow-500")
+                item.classList.add("text-cyan-900")
               } else {
-                item.classList.remove("text-yellow-500")
+                item.classList.remove("text-cyan-900")
               }
             })
           }

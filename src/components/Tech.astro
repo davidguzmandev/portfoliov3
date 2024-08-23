@@ -1,0 +1,89 @@
+---
+import Javascript from "@/icons/Javascript.astro";
+import HTML from "@/icons/HTML.astro";
+import CSS from "@/icons/CSS.astro";
+import ReactJS from "@/icons/ReactJS.astro";
+import Tailwind from "@/icons/Tailwind.astro";
+import Bootstrap from "@/icons/Bootstrap.astro";
+import NodeJS from "@/icons/NodeJS.astro";
+import Mongo from "@/icons/Mongo.astro";
+import Vite from "@/icons/Vite.astro";
+import Wordpress from "@/icons/Wordpress.astro";
+import AstroIcon from "@/icons/AstroIcon.astro";
+import Next from "@/icons/Next.astro";
+import Vue from "@/icons/Vue.astro";
+import JQuery from "@/icons/JQuery.astro";
+import MySql from "@/icons/MySql.astro";
+
+const TAGS = [
+    {
+        name: "HTML",
+        icon: HTML,
+    },
+    {
+        name: "CSS",
+        icon: CSS,
+    },
+    {
+        name: "Javascript",
+        icon: Javascript,
+    },
+    {
+        name: "ReactJS",
+        icon: ReactJS,
+    },
+    {
+        name: "VueJS",
+        icon: Vue,
+    },
+    {
+        name: "Astro",
+        icon: AstroIcon,
+    },
+    {
+        name: "NextJS",
+        icon: Next,
+    },
+    {
+        name: "jQuery",
+        icon: JQuery,
+    },
+    {
+        name: "Tailwind",
+        icon: Tailwind,
+    },
+    {
+        name: "Bootstrap",
+        icon: Bootstrap,
+    },
+    {
+        name: "Wordpress",
+        icon: Wordpress,
+    },
+    {
+        name: "Vite",
+        icon: Vite,
+    },
+    {
+        name: "NodeJS",
+        icon: NodeJS,
+    },
+    {
+        name: "MongoDB",
+        icon: Mongo,
+    },
+    {
+        name: "MySQL",
+        icon: MySql,
+    }
+];
+---
+<article class="flex gap-x-3">
+
+    {TAGS.map((tag)=> (
+        <div class="flex flex-col justify-center text-center items-center">
+            <tag.icon class="size-10" />
+            <p class="text-xs">{tag.name}</p>
+        </div>
+    ))}
+</article>
