@@ -32,9 +32,9 @@ const navItems = [
     <nav
         class="flex px-3 text-sm font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center"
     >
-      <!-- <a href="/">
-        <img class="h-12 w-auto invisible md:visible" src="/public/images/Davidwhite.png" alt="David Guzman">
-      </a> -->
+      <a href="/#home" id="logo" class="md:visible hidden md:block">
+        <img class="h-10 w-auto invisible md:visible mr-28" src="/public/images/Davidwhite.png" alt="David Guzman">
+      </a>
       {
           navItems.map((link) => (
           <a
@@ -52,6 +52,37 @@ const navItems = [
 </header>
 
 <script>
+    document.addEventListener("scroll", () => {
+      const scrollPosition = window.scrollY;
+      const logo = document.getElementById("logo");
+
+      if (scrollPosition > 0 && logo && !logo.classList.contains('hide')) {
+        // Añadir la clase 'hide' para ocultar el logo con una transición suave
+        logo.classList.add('hide');
+        setTimeout(() => {
+          // Elimina el logo del DOM después de la transición
+          if (logo.classList.contains('hide')) {
+            logo.remove();
+          }
+        }, 300); // Duración de la transición en milisegundos
+      } else if (scrollPosition === 0 && !document.getElementById("logo") && window.innerWidth >= 767) {
+        // Si se vuelve al top y el logo no existe, volver a crearlo
+        const newLogo = document.createElement("a");
+        newLogo.href = "/#home";
+        newLogo.id = "logo";
+        newLogo.innerHTML = `<img class="h-10 w-auto invisible md:visible mr-28" src="/public/images/Davidwhite.png" alt="David Guzman">`;
+
+        // Insertar el nuevo logo en la primera posición del nav
+        const nav = document.querySelector("header nav");
+        nav.insertBefore(newLogo, nav.firstChild);
+
+        // Forzar el reflow para asegurarse de que la transición se aplique
+        requestAnimationFrame(() => {
+          newLogo.classList.remove('hide');
+        });
+      }
+    });
+
     document.addEventListener("astro:page-load", () => {
       const sections = document.querySelectorAll("section")
       const navItems = document.querySelectorAll("header nav a")
@@ -98,6 +129,17 @@ const navItems = [
       animation: nav-shadown 1s linear both;
       animation-timeline: scroll();
       animation-range: 0 100px;
+    }
+
+    #logo {
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    #logo.hide {
+      opacity: 0;
+      transform: translateY(-20px);
     }
   
     @keyframes nav-shadown {
