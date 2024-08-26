@@ -74,7 +74,7 @@ const navItems = [
 
         // Insertar el nuevo logo en la primera posición del nav
         const nav = document.querySelector("header nav");
-        nav.insertBefore(newLogo, nav.firstChild);
+        nav?.insertBefore(newLogo, nav.firstChild);
 
         // Forzar el reflow para asegurarse de que la transición se aplique
         requestAnimationFrame(() => {
