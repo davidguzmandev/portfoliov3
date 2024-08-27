@@ -3,7 +3,6 @@ import "@fontsource-variable/onest"
 
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import GoogleTag from '../components/GoogleTag.astro';
 import { ViewTransitions } from "astro:transitions"
 
 interface Props {
@@ -26,7 +25,14 @@ const { title, description } = Astro.props;
 		<ViewTransitions />
 	</head>
 
-
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-6YLZM4XK59"></script>
+	<script is:inline>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+	
+		gtag('config', 'G-6YLZM4XK59');
+	</script>
 
 	<body id="home" class="relative text-black dark:text-white">
 		<div
