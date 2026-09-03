@@ -1,40 +1,66 @@
 ---
-import ExperienceItem from "./ExperienceItem.astro"
+import ExperienceItem from "./ExperienceItem.astro";
 
 const experience = [
-    {
-        date: `January 2024 - Currently • 9 months`,
-        title: 'Frontend Developer',
-        company: 'Freelance',
-        description: 'Web development in HTML, CSS, Tailwind and JavaScript. Web application development with ReactJS and ExpressJS. Development of projects in different languages ​​such as VueJs, Astro, JQuery, NextJs, Yarn, Vite and others as a method of practice and expansion of knowledge.',
-    },
-    {
-        date: 'June 2012 - August 2022 • 10 years 3 months ',
-        title: 'Quality Assurance Specialist',
-        company: 'Ecopetrol SA - Colombia • On site',
-        description: 'I have led internal projects for continuous improvement, focusing on data analysis, production variables, and hazardous materials management. As a Quality and Improvement Staff Leader, I drove a 25% increase in sample analysis and transitioned from Excel to JavaScript programs for quality labs, enhancing efficiency and reporting for stakeholders.',
-    },
-    {
-        date: 'December 2018 - February 2022 • 3 years 2 months ',
-        title: 'Digital Marketing',
-        company: 'Monster Shake - Colombia • On site',
-        description: 'Brand creation and business model development. Corporate identity manual design. Advertising material design. Creation of business social networks. Creation of advertising campaigns on Facebook, Instagram, YouTube and Google.',
-    },
-    {
-        date: 'June 2011 - June 2012 • 1 year',
-        title: 'Web Developer',
-        company: 'Zona en Linea - Colombia • Remote',
-        description: 'Development of web pages in HTML, CSS, Javascript and CMS such as Wordpress, Joomla, Drupal and Prestashop.',
-    }
-]
+  {
+    startDate: "2026-04-27",
+    endDate: "",
+    title: "Application Support Engineer",
+    company: "This Fish - Canada/Mexico • Remote",
+    description:
+      "Provided technical support and infrastructure troubleshooting for enterprise software environments, managing configuration changes, diagnosing software and hardware issues, and maintaining high system availability. Worked with SQL, Linux, Docker, AWS, and GCP to support data workflows, configure IoT integrations, build advanced queries and reports, and translate operational processes into scalable software solutions.",
+  },
+  {
+    startDate: "2025-04-01",
+    endDate: "2026-04-27",
+    title: "Technical Support & QA",
+    company: "Botpress - Canada • Hybrid",
+    description:
+      "Delivered bilingual technical support for SaaS and AI agent platforms, troubleshooting API, integration, and authentication issues for developers and enterprise clients. Reproduced bugs, tracked issues in Jira, validated fixes, and contributed to QA automation workflows using Cypress and Playwright while collaborating with engineering teams to improve product reliability and documentation.",
+  },
+  {
+    startDate: "2023-10-15",
+    endDate: "2023-09-15",
+    title: "Operations Data & QA Analyst (Project Lead) ",
+    company: "Mattr - Canada • Hybrid",
+    description:
+      "Documented data governance and validation procedures to ensure data integrity, consolidated operational datasets into analytical models, and investigated discrepancies across data sources. Built Power BI dashboards to monitor KPIs, detect anomalies, and improve visibility into data pipelines and transformation processes.",
+  },
+  {
+    startDate: "2023-01-15",
+    endDate: "",
+    title: "FullStack Developer",
+    company: "Freelance",
+    description:
+      "Fullstack web developer skilled in HTML, CSS, Tailwind, and JavaScript/TypeScript. Experienced in building web applications with ReactJS, Node.js, and ExpressJS. Proficient in multiple frameworks and tools, including VueJS, Astro, jQuery, NextJS, Yarn,Vite and more, continuously exploring new technologies to expand expertise.",
+  },
+  {
+    startDate: "2012-06-01T00:00:00",
+    endDate: "2022-08-01T00:00:00",
+    title: "QA & Technical Support Assistant",
+    company: "Ecopetrol SA - Colombia • On site",
+    description:
+      "Provided QA and technical support for internal enterprise applications, managing Zendesk tickets, reproducing software issues, assisting with manual testing, and validating data accuracy across reporting tools. Collaborated with technical and non-technical stakeholders to improve QA processes and internal documentation.",
+  },
+  {
+    startDate: "2018-12-01T00:00:00",
+    endDate: "2022-02-28T00:00:00",
+    title: "Digital Marketing",
+    company: "Monster Shake - Colombia • On site",
+    description:
+      "Brand creation and business model development. Corporate identity manual design. Advertising material design. Creation of business social networks. Creation of advertising campaigns on Facebook, Instagram, YouTube and Google.",
+  },
+  {
+    startDate: "2008-04-01T00:00:00",
+    endDate: "2012-04-01T00:00:00",
+    title: "Web Developer",
+    company: "Zona en Linea - Colombia • Remote",
+    description:
+      "Development of web pages in HTML, CSS, Javascript and CMS such as Wordpress, Joomla, Drupal and Prestashop.",
+  },
+];
 ---
 
-
 <ol class="relative border-s border-gray-600 ml-3">
-    {
-        experience.map(experience =>(
-                <ExperienceItem {...experience} />
-        ))
-    }
+  {experience.map((experience) => <ExperienceItem {...experience} />)}
 </ol>
-

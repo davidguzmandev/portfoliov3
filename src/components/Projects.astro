@@ -74,6 +74,14 @@ const TAGS = {
 
 const PROJECTS = [
     {
+        category: 'Fullstack Application',
+        title: 'Rooster / MERN Project',
+        description: 'This application records the work performed by an employee, capturing their location and hours worked. Deploy on Vercel (frontend) and Render (backend).',
+        link: 'https://info.rooster.davidguzman.dev',
+        image: './images/rtw.webp',
+        tags: [TAGS.Javascript, TAGS.ReactJS, TAGS.Tailwind, TAGS.Node, TAGS.Express, TAGS.Mongo, TAGS.Vite]
+    },
+    {
         category: 'Application',
         title: 'Fullstack Application / MERN Project',
         description: 'The application allows for creating users in a database, as well as editing and deleting patient records. Deploy on Vercel (frontend) and Render (backend).',
@@ -86,19 +94,19 @@ const PROJECTS = [
     },
     {
         category: 'Website',
-        title: 'Portfolio Version 1',
-        description: 'Developing my first portfolio with ReactJS and TailwindCSS. Throughout this project, I implemented CSS animations and customized the Tailwind CSS configuration file to tailor the project to specific requirements.',
-        link: 'https://www.daveruncode.com/',
-        image: './images/webv1.webp',
-        tags: [TAGS.HTML, TAGS.CSS, TAGS.ReactJS, TAGS.Tailwind, TAGS.Javascript]
+        title: 'Wild Project',
+        description: 'Wild Project is a creative web agency based in Montréal, Canada. We specialize in building custom websites and web applications that are fast, functional, and visually impactful. From idea to launch, we help businesses go digital with smart, user-focused solutions.',
+        link: 'https://wildproject.co',
+        image: './images/wild.webp',
+        tags: [TAGS.HTML, TAGS.CSS, TAGS.Wordpress]
     },
     {
         category: 'Website',
-        title: 'Portfolio Version 2',
-        description: 'Development of my second version of personal portfolio with Wordpress using several plugins as practice for this CMS such as DIVI and Elementor. The website is optimized in order to obtain fast loading results.',
-        link: 'https://www.davidguzman.dev/v2',
-        image: './images/webv2.webp',
-        tags: [TAGS.Wordpress]
+        title: 'Portfolio Version 1',
+        description: 'Developing my first portfolio with ReactJS and TailwindCSS. Throughout this project, I implemented CSS animations and customized the Tailwind CSS configuration file to tailor the project to specific requirements.',
+        link: 'https://davidguzman.dev/daveruncode/',
+        image: './images/webv1.webp',
+        tags: [TAGS.HTML, TAGS.CSS, TAGS.ReactJS, TAGS.Tailwind, TAGS.Javascript]
     },
     {
         category: 'Application',
@@ -111,6 +119,7 @@ const PROJECTS = [
     },
 ]
 ---
+
 <div class="flex flex-col gap-y-16">
     {
       PROJECTS.map(({ image, title, description, tags, link, github, github2, category, video}) => (

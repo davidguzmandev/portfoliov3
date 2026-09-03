@@ -17,15 +17,50 @@ const { title, description } = Astro.props;
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
+		<link rel="canonical" href="https://davidguzman.dev/" />
 		<meta name="description" content={description} />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="robots" content="index, follow">
+		<meta name="keywords" content="desarrollador web,web developer, web applications, websites programador, JavaScript, React, Node.js, sitios web, paginas web, ecommerce, marketing, full stack, montreal, bogota, mexico">
+		<meta name="author" content="David Guzmán">
+		<meta property="og:title" content={title}/>
+		<meta property="og:description" content={description} />
+		<meta property="og:site_name" content="David Guzmán - Web Developer">
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://davidguzman.dev/" />
+		<meta property="og:image" content="https://davidguzman.dev/images/AboutDavid.webp" />
+		<meta property="og:image:alt" content="David Guzmán Web Developer">
+		<meta property="og:locale" content="en_US" />
+		<meta property="og:locale:alternate" content="es_ES" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content="https://davidguzman.dev/images/AboutDavid.webp" />
+		<meta name="twitter:url" content="https://davidguzman.dev" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<script type="application/ld+json" is:inline>
+			{
+			"@context": "https://schema.org",
+			"@type": "Person",
+			"name": "David Guzmán",
+			"url": "https://davidguzman.dev",
+			"sameAs": [
+				"https://github.com/davidguzmandev",
+				"https://www.linkedin.com/in/david-gzro/"
+			],
+			"jobTitle": "Full Stack Developer",
+			"worksFor": {
+				"@type": "Organization",
+				"name": "Freelance"
+			}
+			}
+		</script>
 		<ViewTransitions />
 	</head>
 
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-6YLZM4XK59"></script>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-6YLZM4XK59" is:inline></script>
 	<script is:inline>
 		window.dataLayer = window.dataLayer || [];
 		function gtag(){dataLayer.push(arguments);}
